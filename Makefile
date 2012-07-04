@@ -8,6 +8,9 @@ all:
 kindle:
 	$(MAKE) -C KindleTool kindle
 
+mingw:
+	$(MAKE) -C KindleTool mingw
+
 debug:
 	$(MAKE) -C KindleTool debug
 

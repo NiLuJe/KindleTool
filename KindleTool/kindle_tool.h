@@ -65,6 +65,8 @@
 
 #define SERIAL_NO_LENGTH 16
 
+#define DEFAULT_BYTES_PER_BLOCK (20*512)
+
 #define IS_SCRIPT(filename) (strncasecmp(filename+(strlen(filename)-4), ".ffs", 4) == 0)
 #define IS_SHELL(filename) (strncasecmp(filename+(strlen(filename)-3), ".sh", 3) == 0)
 #define IS_SIG(filename) (strncasecmp(filename+(strlen(filename)-4), ".sig", 4) == 0)
@@ -182,6 +184,13 @@ typedef struct
     char **metastrings;
 } UpdateInformation;
 
+// This is modeled after libarchive's bsdtar...
+struct kttar
+{
+    char *buff;
+    size_t buff_size;
+};
+
 void md(unsigned char *, size_t);
 void dm(unsigned char *, size_t);
 int munger(FILE *, FILE *, size_t, const int);
@@ -209,7 +218,7 @@ int libarchive_extract(const char *, const char *);
 int kindle_extract_main(int, char **);
 
 int sign_file(FILE *, RSA *, FILE *);
-int kindle_create_package_archive(const int, char **, const int, RSA *, FILE *);
+int kindle_create_package_archive(const int, char **, const int, RSA *);
 int kindle_create(UpdateInformation *, FILE *, FILE *, const int);
 int kindle_create_ota_update_v2(UpdateInformation *, FILE *, FILE *, const int);
 int kindle_create_signature(UpdateInformation *, FILE *, FILE *);

@@ -1,0 +1,242 @@
+diff -r 4c8fd10c18e9 config/kernel/mingw32.in
+--- a/config/kernel/mingw32.in	Mon Jun 18 13:36:29 2012 +0200
++++ b/config/kernel/mingw32.in	Mon Jul 02 23:03:17 2012 +0200
+@@ -12,9 +12,9 @@
+ 
+ # Don't remove next line
+ # CT_INSERT_VERSION_BELOW
+-config W32API_V_3_14
++config W32API_V_3_17
+     bool
+-    prompt "3.14"
++    prompt "3.17-2"
+ 
+ config W32API_V_select
+     bool
+@@ -27,7 +27,7 @@
+     prompt "W32 api version" if W32API_V_select
+ # Don't remove next line
+ # CT_INSERT_VERSION_STRING_BELOW
+-    default "3.14" if W32API_V_3_14
++    default "3.17-2" if W32API_V_3_17
+     help
+       Enter the version number of the windows api files to use
+ 
+diff -r 4c8fd10c18e9 config/libc/mingw.in
+--- a/config/libc/mingw.in	Mon Jun 18 13:36:29 2012 +0200
++++ b/config/libc/mingw.in	Mon Jul 02 23:03:17 2012 +0200
+@@ -12,9 +12,9 @@
+ 
+ # Don't remove next line
+ # CT_INSERT_VERSION_BELOW
+-config MINGWRT_V_3_18
++config MINGWRT_V_3_20
+     bool
+-    prompt "3.18"
++    prompt "3.20-2"
+ 
+ config MINGWRT_V_select
+     bool
+@@ -27,7 +27,7 @@
+     prompt "Mingw runtime version" if MINGWRT_V_select
+ # Don't remove next line
+ # CT_INSERT_VERSION_STRING_BELOW
+-    default "3.18" if MINGWRT_V_3_18
++    default "3.20-2" if MINGWRT_V_3_20
+     help
+       Enter the version number of the mingw runtime files to use
+ 
+diff -r 4c8fd10c18e9 patches/mingwrt/3.20-2/001-mingw-runtime-w32api-include-fix.patch
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/patches/mingwrt/3.20-2/001-mingw-runtime-w32api-include-fix.patch	Mon Jul 02 23:03:17 2012 +0200
+@@ -0,0 +1,137 @@
++diff -uNr mingwrt-3.20-mingw32.orig/aclocal.m4 mingwrt-3.20-mingw32/aclocal.m4
++--- mingwrt-3.20-mingw32.orig/aclocal.m4	2008-10-04 00:48:21.000000000 +0200
+++++ mingwrt-3.20-mingw32/aclocal.m4	2011-12-24 11:40:33.615857566 +0100
++@@ -15,7 +15,65 @@
++  AC_MSG_CHECKING([package version])
++  PACKAGE_VERSION=`awk '$[2] == "'"$1"'" { print $[3] }' ${srcdir}/$2`
++  AC_MSG_RESULT([$PACKAGE_VERSION])dnl
++-]) #MINGW_AC_CONFIG_SRCDIR
+++])# MINGW_AC_CONFIG_SRCDIR
+++
+++# MINGW_AC_W32API_SRCDIR
+++# ----------------------
+++# Attempt to identify the location of the w32api sources.
+++# Accept an explicit location specified by to user, as argument
+++# to --with-w32api-srcdir; if unspecified, fall back to standard
+++# location relative to ${srcdir}.  Identification requires that
+++# include/windows.h is present within the nominated directory.
+++# This is naive, but AC_CHECK_HEADER cannot be used because
+++# the system's w32api headers will interfere.
+++#
+++AC_DEFUN([MINGW_AC_W32API_SRCDIR],
+++[AC_ARG_WITH([w32api-srcdir],
+++ [AS_HELP_STRING([--with-w32api-srcdir=DIR],
+++  [locate w32api sources in DIR [SRCDIR/../w32api]])
+++ ],[],[with_w32api_srcdir=NONE])
+++ AS_IF([test "x${with_w32api_srcdir}" = xNONE],
+++ [AC_MSG_CHECKING([include path for w32api headers])
+++  for with_w32api_srcdir in ${srcdir}/../w32api*; do
+++    test -f "${with_w32api_srcdir}/include/windows.h" && break
+++    with_w32api_srcdir=NONE
+++  done
+++  AS_IF([test "x${with_w32api_srcdir}" = xNONE],
+++  [AC_MSG_RESULT([none found])
+++   AC_MSG_RESULT
+++   AC_MSG_WARN([source directory containing include/windows.h not found])
+++   AC_MSG_WARN([ensure w32api sources are installed at \${top_srcdir}/../w32api*])
+++   AC_MSG_WARN([or use --with-w32api-srcdir=DIR to specify an alternative])
+++  ],
+++  [case "${with_w32api_srcdir}" in
+++     "${srcdir}/"*) with_w32api_srcdir="`echo "${with_w32api_srcdir}"dnl
+++       | sed s,"^${srcdir}/",'${top_srcdir}/',`" ;;
+++   esac
+++   AC_MSG_RESULT([${with_w32api_srcdir}/include])
+++  ])
+++ ],
+++ [AC_MSG_CHECKING([for windows.h in ${with_w32api_srcdir}/include])
+++  AS_IF([test -f "${with_w32api_srcdir}/include/windows.h"],
+++  [AC_MSG_RESULT([yes])
+++   case "${with_w32api_srcdir}" in /*) ;;
+++     *) with_w32api_srcdir='${top_builddir}/'"${with_w32api_srcdir}" ;;
+++   esac
+++  ],
+++  [AC_MSG_RESULT([no])
+++   AC_MSG_RESULT
+++   AC_MSG_WARN([the nominated directory, ${with_w32api_srcdir}])
+++   AC_MSG_WARN([does not appear to contain valid w32api source code])
+++   AC_MSG_WARN([(file '${with_w32api_srcdir}/include/windows.h' is not present)])
+++   with_w32api_srcdir=NONE
+++  ])
+++ ])
+++ AS_IF([test "x${with_w32api_srcdir}" = xNONE],
+++ [AC_MSG_WARN([please correct this omission and run configure again])
+++  AC_MSG_RESULT
+++  AC_MSG_ERROR([unable to continue until this issue is resolved])
+++ ])
+++ W32API_INCLUDE="${with_w32api_srcdir}/include"
+++])# MINGW_AC_W32API_SRCDIR
++ 
++ # The following is copied from `no-executables.m4', in the top
++ # `src/config' directory.
++diff -uNr mingwrt-3.20-mingw32.orig/configure.in mingwrt-3.20-mingw32/configure.in
++--- mingwrt-3.20-mingw32.orig/configure.in	2009-07-27 22:27:09.000000000 +0200
+++++ mingwrt-3.20-mingw32/configure.in	2011-12-24 11:40:33.615857566 +0100
++@@ -44,7 +44,7 @@
++ 
++ AC_SUBST([NO_CYGWIN])
++ AC_SUBST([HEADER_SUBDIR])
++-AC_SUBST([W32API_INCLUDE], ['-I ${top_srcdir}/../w32api/include'])
+++AC_SUBST([W32API_INCLUDE], [MINGW_AC_W32API_SRCDIR])
++ 
++ # The following are used by the GCC profiling hooks...
++ #
++diff -uNr mingwrt-3.20-mingw32.orig/Makefile.in mingwrt-3.20-mingw32/Makefile.in
++--- mingwrt-3.20-mingw32.orig/Makefile.in	2011-05-23 05:02:16.000000000 +0200
+++++ mingwrt-3.20-mingw32/Makefile.in	2011-12-24 14:35:58.074175833 +0100
++@@ -167,12 +167,13 @@
++ LIBM_A=@LIBM_A@
++ 
++ W32API_INCLUDE = @W32API_INCLUDE@
++-INCLUDES = -I$(srcdir)/include \
++-  -I$(srcdir)/../include \
+++INCLUDES = -I $(srcdir)/include \
+++  -I $(srcdir)/../include \
++   -nostdinc \
+++  -isystem $(W32API_INCLUDE) \
++   -iwithprefixbefore include
++-ALL_CFLAGS = $(CFLAGS) $(INCLUDES) $(W32API_INCLUDE)
++-ALL_CXXFLAGS = $(CXXFLAGS) $(INCLUDES) -nostdinc++ $(W32API_INCLUDE)
+++ALL_CFLAGS = $(CFLAGS) $(INCLUDES) -I $(W32API_INCLUDE)
+++ALL_CXXFLAGS = $(CXXFLAGS) $(INCLUDES) -nostdinc++ -I $(W32API_INCLUDE)
++ 
++ AS = @AS@
++ AR = @AR@
++diff -uNr mingwrt-3.20-mingw32.orig/mingwex/Makefile.in mingwrt-3.20-mingw32/mingwex/Makefile.in
++--- mingwrt-3.20-mingw32.orig/mingwex/Makefile.in	2009-10-29 22:53:03.000000000 +0100
+++++ mingwrt-3.20-mingw32/mingwex/Makefile.in	2011-12-24 11:56:14.917796590 +0100
++@@ -126,10 +126,9 @@
++ override CC := ${NO_CYGWIN} $(firstword $(filter-out ${NO_CYGWIN},${CC}))
++ endif
++ 
++-W32API_INCLUDE = @W32API_INCLUDE@
++-INCLUDES = -I${srcdir} -I${top_srcdir} -I${top_srcdir}/include \
++-  -nostdinc \
++-  -iwithprefixbefore include
+++W32API_INCLUDE = -I @W32API_INCLUDE@
+++INCLUDES = -I ${srcdir} -I ${top_srcdir} -I ${top_srcdir}/include \
+++  -nostdinc -isystem @W32API_INCLUDE@ -iwithprefixbefore include
++ ALL_CFLAGS = $(CFLAGS) $(WARNFLAGS) $(OPTFLAGS) $(INCLUDES) $(W32API_INCLUDE)
++ ALL_CXXFLAGS = $(CXXFLAGS) $(WARNFLAGS) $(OPTFLAGS) $(INCLUDES) -nostdinc++ $(W32API_INCLUDE)
++ 
++diff -uNr mingwrt-3.20-mingw32.orig/profile/Makefile.in mingwrt-3.20-mingw32/profile/Makefile.in
++--- mingwrt-3.20-mingw32.orig/profile/Makefile.in	2009-10-29 22:53:03.000000000 +0100
+++++ mingwrt-3.20-mingw32/profile/Makefile.in	2011-12-24 11:40:33.616857566 +0100
++@@ -65,10 +65,9 @@
++ THREAD_DLL_VERSION = 10
++ THREAD_DLL_NAME = $(THREAD_DLL)$(THREAD_DLL_VERSION).dll
++ 
++-W32API_INCLUDE = @W32API_INCLUDE@
++-INCLUDES = -I${srcdir} -I${top_srcdir}/include \
++-  -nostdinc \
++-  -iwithprefixbefore include
+++W32API_INCLUDE = -I @W32API_INCLUDE@
+++INCLUDES = -I ${srcdir} -I ${top_srcdir}/include \
+++  -nostdinc -iwithprefixbefore include
++ ALL_CFLAGS = $(CFLAGS) $(INCLUDES) $(W32API_INCLUDE)
++ ALL_CXXFLAGS = $(CXXFLAGS) $(INCLUDES) -nostdinc++ $(W32API_INCLUDE)
++ 
+diff -r 4c8fd10c18e9 scripts/build/kernel/mingw32.sh
+--- a/scripts/build/kernel/mingw32.sh	Mon Jun 18 13:36:29 2012 +0200
++++ b/scripts/build/kernel/mingw32.sh	Mon Jul 02 23:03:17 2012 +0200
+@@ -8,7 +8,7 @@
+ }
+ 
+ do_kernel_get() {
+-    CT_GetFile "w32api-${CT_W32API_VERSION}-mingw32-src" \
++    CT_GetFile "w32api-${CT_W32API_VERSION}-mingw32-src" .tar.lzma \
+         http://downloads.sourceforge.net/sourceforge/mingw
+ }
+ 
+diff -r 4c8fd10c18e9 scripts/build/libc/mingw.sh
+--- a/scripts/build/libc/mingw.sh	Mon Jun 18 13:36:29 2012 +0200
++++ b/scripts/build/libc/mingw.sh	Mon Jul 02 23:03:17 2012 +0200
+@@ -1,5 +1,5 @@
+ do_libc_get() {
+-    CT_GetFile "mingwrt-${CT_MINGWRT_VERSION}-mingw32-src" \
++    CT_GetFile "mingwrt-${CT_MINGWRT_VERSION}-mingw32-src" .tar.lzma \
+         http://downloads.sourceforge.net/sourceforge/mingw
+ 
+     if [ -n "${CT_MINGW_DIRECTX}" ]; then
+@@ -23,6 +23,20 @@
+ do_libc_extract() {
+     CT_Extract "mingwrt-${CT_MINGWRT_VERSION}-mingw32-src"
+ 
++    # Fix cross build. Patch from https://bugs.gentoo.org/395893
++    CT_Pushd "${CT_SRC_DIR}/mingwrt-${CT_MINGWRT_VERSION}-mingw32-src"
++    CT_Patch nochdir "mingwrt" "${CT_MINGWRT_VERSION}"
++    CT_Popd
++
++    # We need to regenerate the configure script because of our patch
++    CT_Pushd "${CT_SRC_DIR}/mingwrt-${CT_MINGWRT_VERSION}-mingw32-src"
++    if [ ! -f .autoreconf.ct-ng ]; then
++        CT_DoLog DEBUG "Running autoreconf"
++        CT_DoExecLog ALL autoreconf
++        touch .autoreconf.ct-ng
++    fi
++    CT_Popd
++
+     if [ -n "${CT_MINGW_PDCURSES}" ]; then
+         CT_Extract "PDCurses-${CT_MINGW_PDCURSES_VERSION}"
+         CT_Patch "PDCurses" "${CT_MINGW_PDCURSES_VERSION}"
+@@ -86,7 +100,8 @@
+     "${CT_SRC_DIR}/mingwrt-${CT_MINGWRT_VERSION}-mingw32-src/configure" \
+         --prefix=${CT_SYSROOT_DIR}/                                     \
+         --includedir=${CT_HEADERS_DIR}                                  \
+-        --host=${CT_TARGET}
++        --host=${CT_TARGET}                                             \
++        --with-w32api-srcdir=${CT_SRC_DIR}/w32api-${CT_W32API_VERSION}-mingw32-src
+ 
+     CT_DoLog EXTRA "Building MinGW Runtime"
+     CT_DoExecLog ALL make ${JOBSFLAGS}

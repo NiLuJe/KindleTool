@@ -1,0 +1,22 @@
+diff -Nuarp zlib-1.2.7-ori/win32/Makefile.gcc zlib-1.2.7/win32/Makefile.gcc
+--- zlib-1.2.7-ori/win32/Makefile.gcc	2012-05-02 20:17:58.000000000 +0200
++++ zlib-1.2.7/win32/Makefile.gcc	2012-07-04 23:19:10.747624677 +0200
+@@ -41,15 +41,15 @@ SHARED_MODE=0
+ #LOC = -DASMV
+ #LOC = -DDEBUG -g
+ 
+-PREFIX =
++PREFIX = i686-w64-mingw32-
+ CC = $(PREFIX)gcc
+-CFLAGS = $(LOC) -O3 -Wall
++CFLAGS = $(LOC) -O2 -ffast-math -march=i686 -mtune=i686 -pipe -fomit-frame-pointer -Wall
+ 
+ AS = $(CC)
+ ASFLAGS = $(LOC) -Wall
+ 
+ LD = $(CC)
+-LDFLAGS = $(LOC)
++LDFLAGS = $(LOC) -Wl,-O1 -Wl,--as-needed
+ 
+ AR = $(PREFIX)ar
+ ARFLAGS = rcs

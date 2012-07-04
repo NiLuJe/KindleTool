@@ -31,3 +31,7 @@ To compile for Windows:
 	4.2) If you want to download it via wget from the Cygwin shell, you'll have to install wget/curl, and jump through a few hoops to setup the SSL CA certs... (google is your friend).
 	5) Compile using "make" in the tool's directory
 	6) Install it by running "make install"
+
+	BIS) Alternatively, you can also buld a native version via the MinGW or MinGW-w64 toolchain.
+		On a native MinGW+MSYS toolchain, you'll probably have to tweak the Makefile, but it should handle a Linux cross toolchain properly with the mingw target ;).
+		Check the tools/mingw directory for more details.
