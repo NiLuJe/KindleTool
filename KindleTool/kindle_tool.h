@@ -88,9 +88,9 @@
 #define IS_UIMAGE(filename) (strncmp(filename+(strlen(filename)-6), "uImage", 6) == 0)
 
 // Don't break tempfiles on Win32... (it doesn't like paths starting with // because that means an 'extended' path (network shares and more weird stuff like that), but P_tmpdir defaults to / on Win32, and we prepend our own constants with / because it's /tmp on POSIX...)
-// Geekmaster update: Don't put tempfile on drive root ("/" gives permission violation), but use "./" (current dir) instead.
+// Geekmaster update: Don't put tempfile on drive root ("/" gives permission violation), but use "../" (parent dir) instead. Current dir fails on OTA2 updates.
 #if defined(_WIN32) && !defined(__CYGWIN__)
-#define KT_TMPDIR "."
+#define KT_TMPDIR ".."
 #else
 #define KT_TMPDIR P_tmpdir
 #endif
