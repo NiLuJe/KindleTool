@@ -179,19 +179,19 @@ EOF
 
 	# Package it
 	git log --stat --graph > ../../ChangeLog
-	./version.sh PMS
-	VER_FILE="VERSION"
+	./KindleTool/version.sh PMS
+	VER_FILE="./KindleTool/VERSION"
 	VER_CURRENT="$(<${VER_FILE})"
 	# Strip the git commit
 	REV="${VER_CURRENT%%-*}"
 	#REV="${VER_CURRENT}"
 	cd ../..
-	cp -v KindleTool/KindleTool/Release/kindletool ./kindletool
-	cp -v KindleTool/README.md ./README
+	cp -v KindleTool/KindleTool/KindleTool/Release/kindletool ./kindletool
+	cp -v KindleTool/KindleTool/README.md ./README
 	# Quick! Markdown => plaintext
 	sed -si 's/<b>//g;s/<\/b>//g;s/<i>//g;s/<\/i>//g;s/&lt;/</g;s/&gt;/>/g;s/&amp;/&/g;s/^* /  /g;s/*//g;s/>> /\t/g;s/^> /  /g;s/^## //g;s/### //g;s/\t/    /g;s/^\([[:digit:]]\)\./  \1)/g;s/^#.*$//;s/[[:blank:]]*$//g' README
-	cp -v KindleTool/KindleTool/kindletool.1 ./kindletool.1
-	mv -v KindleTool/KindleTool/VERSION ./VERSION
+	cp -v KindleTool/KindleTool/KindleTool/kindletool.1 ./kindletool.1
+	cp -v KindleTool/KindleTool/KindleTool/VERSION ./VERSION
 	tar -cvzf kindletool-${REV}-linux-${ARCH}.tar.gz kindletool CREDITS README kindletool.1 ChangeLog VERSION
 	rm -f kindletool CREDITS README kindletool.1 ChangeLog VERSION
 }
