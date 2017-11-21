@@ -39,6 +39,7 @@ KEY='-'     # Default is the place holder character for 'all'.
 # Key : u   # usbnet
 # Key : r   # rescue pack
 # Key : c   # rescue pack with cowards rescue pack
+# Key : p   # Python
 
 if [ $# -gt 0 ] ; then
     KEY=$1
@@ -63,4 +64,6 @@ done <<EoF
 -c  Update_crp_2.N_install.bin                              Update_crp_2.N_install_converted.tar.gz                               Update_crp_2.N_install_koa2_nomax.bin
 -c  Update_crp_2.N_uninstall.bin                            Update_crp_2.N_uninstall_converted.tar.gz                             Update_crp_2.N_uninstall_koa2_nomax.bin
 -rc Update_rp_20131220.N_install.bin                        Update_rp_20131220.N_install_converted.tar.gz                         Update_rp_20131220.N_install_koa2_nomax.bin
+-p  Update_python_0.14.N_install_pw2_kt2_kv_pw3_koa_kt3.bin Update_python_0.14.N_install_pw2_kt2_kv_pw3_koa_kt3_converted.tar.gz  Update_python_0.14.N_install_koa2_nomax.bin
+-p  Update_python_0.14.N_uninstall.bin                      Update_python_0.14.N_uninstall_converted.tar.gz                       Update_python_0.14.N_uninstall_koa2_nomax.bin
 EoF
