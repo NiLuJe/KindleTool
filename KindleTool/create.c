@@ -1685,6 +1685,21 @@ int
 						info.devices[info.num_devices++] = KindlePaperWhite6Unknown_3J5;
 						info.devices[info.num_devices++] = KindlePaperWhite6Unknown_3JS;
 					}
+				}  else if (strcasecmp(optarg, "scribe2") == 0) {
+					memcpy(info.magic_number, "FD04", MAGIC_NUMBER_LENGTH);
+					const unsigned int num_aliased_devices = 0 + (kt_with_unknown_devcodes * 8);
+					info.devices                           = realloc(info.devices,
+                                                               (info.num_devices + num_aliased_devices) * sizeof(Device));
+					if (kt_with_unknown_devcodes) {
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3V0;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3V1;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3X5;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3UV;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3X4;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3X3;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_41E;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_41D;
+					}
 				} else if (strcasecmp(optarg, "colorsoft") == 0) {
 					memcpy(info.magic_number, "FD04", MAGIC_NUMBER_LENGTH);
 					const unsigned int num_aliased_devices = 0 + (kt_with_unknown_devcodes * 10);
@@ -1722,6 +1737,7 @@ int
 					    3 + (kt_with_unknown_devcodes * 5) +     // Scribe
 					    0 + (kt_with_unknown_devcodes * 7) +     // KT6
 					    0 + (kt_with_unknown_devcodes * 10) +    // PW6
+						0 + (kt_with_unknown_devcodes * 8) +     // Scribe 2
 					    0 + (kt_with_unknown_devcodes * 10);     // CS
 					info.devices                     = realloc(info.devices,
                                                                (info.num_devices + num_aliased_devices) * sizeof(Device));
@@ -1912,6 +1928,17 @@ int
 						info.devices[info.num_devices++] = KindlePaperWhite6Unknown_3H8;
 						info.devices[info.num_devices++] = KindlePaperWhite6Unknown_3J5;
 						info.devices[info.num_devices++] = KindlePaperWhite6Unknown_3JS;
+					}
+					// Scribe 2
+					if (kt_with_unknown_devcodes) {
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3V0;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3V1;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3X5;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3UV;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3X4;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_3X3;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_41E;
+						info.devices[info.num_devices++] = KindleScribe2Unknown_41D;
 					}
 					// CS
 					if (kt_with_unknown_devcodes) {

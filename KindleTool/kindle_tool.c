@@ -516,6 +516,22 @@ const char*
 			return "Kindle PaperWhite 6 (2024) (Unknown Variant 3J5)";
 		case KindlePaperWhite6Unknown_3JS:
 			return "Kindle PaperWhite 6 (2024) (Unknown Variant 3JS)";
+		case KindleScribe2Unknown_3V0:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 3V0)";
+		case KindleScribe2Unknown_3V1:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 3V1)";
+		case KindleScribe2Unknown_3X5:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 3X5)";
+		case KindleScribe2Unknown_3UV:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 3UV)";
+		case KindleScribe2Unknown_3X4:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 3X4)";
+		case KindleScribe2Unknown_3X3:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 3X3)";
+		case KindleScribe2Unknown_41E:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 41E)";
+		case KindleScribe2Unknown_41D:
+			return "Kindle Scribe 2 (2024) (Unknown Variant 41D)";
 		case KindleColorSoftUnknown_3H9:
 			return "Kindle ColorSoft (2024) (Unknown Variant 3H9)";
 		case KindleColorSoftUnknown_3H4:
@@ -752,8 +768,9 @@ static int
 	    "      -d, --device scribe         Includes all known Kindle Scribe variants\n"
 	    "      -d, --device basic5         Includes all known Kindle Basic 5 variants\n"
 	    "      -d, --device paperwhite6    Includes all known Kindle PaperWhite 6 variants\n"
+		"      -d, --device scribe2        Includes all known Kindle Scribe 2 variants\n"
 	    "      -d, --device colorsoft      Includes all known Kindle ColorSoft variants\n"
-	    "      -d, --device kindle5        Alias for touch + paperwhite + paperwhite2 + basic + voyage + paperwhite3 + oasis + basic2 + oasis2 + paperwhite4 + basic3 + oasis3 + paperwhite5 + basic4 + scribe + basic5 + paperwhite6 + colorsoft\n"
+		"      -d, --device kindle5        Alias for touch + paperwhite + paperwhite2 + basic + voyage + paperwhite3 + oasis + basic2 + oasis2 + paperwhite4 + basic3 + oasis3 + paperwhite5 + basic4 + scribe + basic5 + paperwhite6 + scribe2 + colorsoft\n"
 	    "      -d, --device none           No specific device (Recovery V2 & Recovery FB02 with header rev 2 only, default).\n"
 	    "      -d, --device auto           The current device (Obviously, has to be run from a Kindle).\n"
 	    "      \n"
