@@ -71,7 +71,7 @@ model_tuples = [
 	('KindlePaperWhite2WiFi3GCanada',			0xD6,	'A3CG2RMGG8NQEJ'),
 	('KindlePaperWhite2WiFi3GEurope',			0xD7,	'A2RWEQK36M6DUE'),
 	('KindlePaperWhite2WiFi3GRussia',			0xD8,	'A3DM9ZTSZGUSMW'),
-	('KindlePaperWhite2WiFi3GJapan',			0xF2,	'A36L7QE2V0XKCZ'),
+	('KindlePaperWhite2WiFi3GJapan',			0xF2,	'A36L7QE2V0xKCZ'),
 	('KindlePaperWhite2WiFi4GBInternational',		0x17,	'A3I3CR3NPZFVHY'),
 	('KindlePaperWhite2WiFi3G4GBCanada',			0x5F,	'A16EMENY0O3Z2H'),
 	('KindlePaperWhite2WiFi3G4GBEurope',			0x60,	'A3D1N3J5SXSYPF'),
@@ -82,7 +82,7 @@ model_tuples = [
 	('KindleVoyageWiFi',					0x13,	'A3FE7AD5N5R11'),
 	('KindleVoyageWiFi3G',					0x54,	'A1VHVRSIVA49BF'),
 	('KindleVoyageWiFi3GJapan',				0x2A,	'A2KSI370ME58SV'),
-	('KindleVoyageWiFi3G_0x4F',					0x4F,	'AEK24W3B90XSI'),
+	('KindleVoyageWiFi3G_0x4F',					0x4F,	'AEK24W3B90xSI'),
 	('KindleVoyageWiFi3GMexico',				0x52,	'A66ZTOXC8UWFP'),
 	('KindleVoyageWiFi3GEurope',				0x53,	'A26JMGYIXWMKGL'),
 	('KindleBasic',						0xC6,	'A2TNPB8EVLW5FA'),
@@ -204,14 +204,14 @@ model_tuples = [
 	('KindlePaperWhite6Unknown_3H8',			0xE28,	'A1BF5SA90HOYO2'),	# 3H8?
 	('KindlePaperWhite6Unknown_3J5',			0xE45,	'A1BF5SA90HOYO2'),	# 3J5?
 	('KindlePaperWhite6Unknown_3JS',			0xE5A,	'A1BF5SA90HOYO2'),	# 3JS?
-	('KindleScribe2Unknown_3V0',				0XFA0,	'A3TY6T3X94EBV6'),  # 3V0?
-	('KindleScribe2Unknown_3V1',				0XFA1,	'A3TY6T3X94EBV6'),  # 3V1?
-	('KindleScribe2Unknown_3X5',				0XFE5,	'A3TY6T3X94EBV6'),  # 3X5?
-	('KindleScribe2Unknown_3UV',				0XF9D,	'A3TY6T3X94EBV6'),  # 3UV?
-	('KindleScribe2Unknown_3X4',				0XFE4,	'A3TY6T3X94EBV6'),  # 3X4?
-	('KindleScribe2Unknown_3X3',				0XFE3,	'A3TY6T3X94EBV6'),  # 3X3?
-	('KindleScribe2Unknown_41E',				0X102E,	'A3TY6T3X94EBV6'),  # 41E?
-	('KindleScribe2Unknown_41D',				0X102D,	'A3TY6T3X94EBV6'),  # 41D?
+	('KindleScribe2Unknown_3V0',				0xFA0,	'A3TY6T3X94EBV6'),  # 3V0?
+	('KindleScribe2Unknown_3V1',				0xFA1,	'A3TY6T3X94EBV6'),  # 3V1?
+	('KindleScribe2Unknown_3X5',				0xFE5,	'A3TY6T3X94EBV6'),  # 3X5?
+	('KindleScribe2Unknown_3UV',				0xF9D,	'A3TY6T3X94EBV6'),  # 3UV?
+	('KindleScribe2Unknown_3X4',				0xFE4,	'A3TY6T3X94EBV6'),  # 3X4?
+	('KindleScribe2Unknown_3X3',				0xFE3,	'A3TY6T3X94EBV6'),  # 3X3?
+	('KindleScribe2Unknown_41E',				0x102E,	'A3TY6T3X94EBV6'),  # 41E?
+	('KindleScribe2Unknown_41D',				0x102D,	'A3TY6T3X94EBV6'),  # 41D?
 	('KindleColorSoftUnknown_3H9',				0xE29,	'A2CU9ZQDNZFID4'),	# 3H9?
 	('KindleColorSoftUnknown_3H4',				0xE24,	'A2CU9ZQDNZFID4'),	# 3H4?
 	('KindleColorSoftUnknown_3HB',				0xE2B,	'A2CU9ZQDNZFID4'),	# 3HB?
