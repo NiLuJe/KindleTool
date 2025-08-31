@@ -391,6 +391,8 @@ typedef enum
 	KindleColorSoftUnknown_3JT        = 0xE5B,     // 3JT?
 	KindleColorSoftUnknown_3J6        = 0xE46,     // 3J6?
 	KindleColorSoftUnknown_456        = 0x10A6,    // 456?
+	KindleColorSoftUnknown_455        = 0x10A5,    // 456?
+	KindleColorSoftUnknown_4EP        = 0x11D7,    // 456?
 	KindleUnknown                     = 0x00
 } Device;
 
