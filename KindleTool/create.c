@@ -21,6 +21,7 @@
 */
 
 #include "create.h"
+#include "kindle_tool.h"
 
 static const char*
     convert_bundle_version(BundleVersion bundlev)
@@ -1717,6 +1718,14 @@ int
 						info.devices[info.num_devices++] = KindleColorSoftUnknown_3J6;
 						info.devices[info.num_devices++] = KindleColorSoftUnknown_456;
 					}
+				} else if (strcasecmp(optarg, "colorsoft2") == 0) {
+					memcpy(info.magic_number, "FD04", MAGIC_NUMBER_LENGTH);
+					const unsigned int num_aliased_devices = 0 + (kt_with_unknown_devcodes * 1);
+					info.devices                           = realloc(info.devices,
+                                                               (info.num_devices + num_aliased_devices) * sizeof(Device));
+					if (kt_with_unknown_devcodes) {
+						info.devices[info.num_devices++] = KindleColorSoft2Unknown_455;
+					}
 				} else if (strcasecmp(optarg, "kindle5") == 0) {
 					memcpy(info.magic_number, "FD04", MAGIC_NUMBER_LENGTH);
 					const unsigned int num_aliased_devices =
@@ -1738,7 +1747,8 @@ int
 					    0 + (kt_with_unknown_devcodes * 7) +     // KT6
 					    0 + (kt_with_unknown_devcodes * 10) +    // PW6
 						0 + (kt_with_unknown_devcodes * 8) +     // Scribe 2
-					    0 + (kt_with_unknown_devcodes * 10);     // CS
+					    0 + (kt_with_unknown_devcodes * 10) +    // CS
+						0 + (kt_with_unknown_devcodes * 1);      // CS2
 					info.devices                     = realloc(info.devices,
                                                                (info.num_devices + num_aliased_devices) * sizeof(Device));
 					// K5
@@ -1952,6 +1962,10 @@ int
 						info.devices[info.num_devices++] = KindleColorSoftUnknown_3JT;
 						info.devices[info.num_devices++] = KindleColorSoftUnknown_3J6;
 						info.devices[info.num_devices++] = KindleColorSoftUnknown_456;
+					}
+					// CS2
+					if (kt_with_unknown_devcodes) {
+						info.devices[info.num_devices++] = KindleColorSoft2Unknown_455;
 					}
 				} else if (kt_with_unknown_devcodes &&
 					   (strcasecmp(optarg, "unknown") == 0 || strcasecmp(optarg, "datamined") == 0)) {
