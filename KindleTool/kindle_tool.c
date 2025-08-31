@@ -552,8 +552,6 @@ const char*
 			return "Kindle ColorSoft (2024) (Unknown Variant 3J6)";
 		case KindleColorSoftUnknown_456:
 			return "Kindle ColorSoft (2024) (Unknown Variant 456)";
-		case KindleColorSoft2Unknown_455:
-			return "Kindle ColorSoft 2 (2025) (Unknown Variant 455)";
 		case KindleUnknown:
 		default:
 			return "Unknown";
@@ -772,8 +770,7 @@ static int
 	    "      -d, --device paperwhite6    Includes all known Kindle PaperWhite 6 variants\n"
 		"      -d, --device scribe2        Includes all known Kindle Scribe 2 variants\n"
 	    "      -d, --device colorsoft      Includes all known Kindle ColorSoft variants\n"
-		"      -d, --device colorsoft2     Includes all known Kindle ColorSoft2 variants\n"
-		"      -d, --device kindle5        Alias for touch + paperwhite + paperwhite2 + basic + voyage + paperwhite3 + oasis + basic2 + oasis2 + paperwhite4 + basic3 + oasis3 + paperwhite5 + basic4 + scribe + basic5 + paperwhite6 + scribe2 + colorsoft + colorsoft2\n"
+		"      -d, --device kindle5        Alias for touch + paperwhite + paperwhite2 + basic + voyage + paperwhite3 + oasis + basic2 + oasis2 + paperwhite4 + basic3 + oasis3 + paperwhite5 + basic4 + scribe + basic5 + paperwhite6 + scribe2 + colorsoft\n"
 	    "      -d, --device none           No specific device (Recovery V2 & Recovery FB02 with header rev 2 only, default).\n"
 	    "      -d, --device auto           The current device (Obviously, has to be run from a Kindle).\n"
 	    "      \n"

@@ -391,8 +391,6 @@ typedef enum
 	KindleColorSoftUnknown_3JT        = 0xE5B,     // 3JT?
 	KindleColorSoftUnknown_3J6        = 0xE46,     // 3J6?
 	KindleColorSoftUnknown_456        = 0x10A6,    // 456?
-	// Kindle ColorSoft, released July 2025 on FW 5.18.?
-	KindleColorSoft2Unknown_455		  = 0x10A5,	   // 455
 	KindleUnknown                     = 0x00
 } Device;
 
