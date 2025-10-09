@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
+
 #
 # Simple static build.
 # (Only libarchive & nettle will be built/statically linked).

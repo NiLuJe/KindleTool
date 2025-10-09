@@ -372,14 +372,14 @@ typedef enum
 	KindlePaperWhite6Unknown_3J5      = 0xE45,    // 3J5?
 	KindlePaperWhite6Unknown_3JS      = 0xE5A,    // 3JS?
 	// Kindle Scribe 2, released October 2024 on FW 5.17.x
-	KindleScribe2Unknown_3V0		  = 0xFA0,     // 3V0?
-	KindleScribe2Unknown_3V1		  = 0xFA1,     // 3V1?
-	KindleScribe2Unknown_3X5		  = 0xFE5,     // 3X5?
-	KindleScribe2Unknown_3UV		  = 0xF9D,     // 3UV?
-	KindleScribe2Unknown_3X4		  = 0xFE4,     // 3X4?
-	KindleScribe2Unknown_3X3		  = 0xFE3,     // 3X3?
-	KindleScribe2Unknown_41E		  = 0x102E,    // 41E?
-	KindleScribe2Unknown_41D		  = 0x102D,    // 41D?
+	KindleScribe2Unknown_3V0          = 0xFA0,     // 3V0?
+	KindleScribe2Unknown_3V1          = 0xFA1,     // 3V1?
+	KindleScribe2Unknown_3X5          = 0xFE5,     // 3X5?
+	KindleScribe2Unknown_3UV          = 0xF9D,     // 3UV?
+	KindleScribe2Unknown_3X4          = 0xFE4,     // 3X4?
+	KindleScribe2Unknown_3X3          = 0xFE3,     // 3X3?
+	KindleScribe2Unknown_41E          = 0x102E,    // 41E?
+	KindleScribe2Unknown_41D          = 0x102D,    // 41D?
 	// Kindle ColorSoft, released October 2024 on FW 5.18.0
 	KindleColorSoftUnknown_3H9        = 0xE29,     // 3H9?
 	KindleColorSoftUnknown_3H4        = 0xE24,     // 3H4?
