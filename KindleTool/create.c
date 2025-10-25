@@ -1685,7 +1685,7 @@ int
 						info.devices[info.num_devices++] = KindlePaperWhite6Unknown_3J5;
 						info.devices[info.num_devices++] = KindlePaperWhite6Unknown_3JS;
 					}
-				}  else if (strcasecmp(optarg, "scribe2") == 0) {
+				} else if (strcasecmp(optarg, "scribe2") == 0) {
 					memcpy(info.magic_number, "FD04", MAGIC_NUMBER_LENGTH);
 					const unsigned int num_aliased_devices = 0 + (kt_with_unknown_devcodes * 8);
 					info.devices                           = realloc(info.devices,
@@ -1739,7 +1739,7 @@ int
 					    3 + (kt_with_unknown_devcodes * 5) +     // Scribe
 					    0 + (kt_with_unknown_devcodes * 7) +     // KT6
 					    0 + (kt_with_unknown_devcodes * 10) +    // PW6
-						0 + (kt_with_unknown_devcodes * 8) +     // Scribe 2
+					    0 + (kt_with_unknown_devcodes * 8) +     // Scribe 2
 					    0 + (kt_with_unknown_devcodes * 12);     // CS
 					info.devices                     = realloc(info.devices,
                                                                (info.num_devices + num_aliased_devices) * sizeof(Device));
