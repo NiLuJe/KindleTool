@@ -78,11 +78,11 @@ static int
 	}
 }
 
-static const uint8_t pem_start_pattern[11] = "-----BEGIN ";
+static const uint8_t pem_start_pattern[11] __attribute__((nonstring)) = "-----BEGIN ";
 
-static const uint8_t pem_end_pattern[9] = "-----END ";
+static const uint8_t pem_end_pattern[9] __attribute__((nonstring)) = "-----END ";
 
-static const uint8_t pem_trailer_pattern[5] = "-----";
+static const uint8_t pem_trailer_pattern[5] __attribute__((nonstring)) = "-----";
 
 static const char pem_ws[33] = {
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0,   /* \t, \n, \v, \f, \r */
