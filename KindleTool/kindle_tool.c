@@ -552,6 +552,10 @@ const char*
 			return "Kindle ColorSoft (2024) (Unknown Variant 3J6)";
 		case KindleColorSoftUnknown_456:
 			return "Kindle ColorSoft (2024) (Unknown Variant 456)";
+		case KindleColorSoftUnknown_455:
+			return "Kindle ColorSoft (2024) (Unknown Variant 455)";
+		case KindleColorSoftUnknown_4EP:
+			return "Kindle ColorSoft (2024) (Unknown Variant 4EP)";
 		case KindleUnknown:
 		default:
 			return "Unknown";

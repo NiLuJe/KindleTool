@@ -222,6 +222,8 @@ model_tuples = [
 	('KindleColorSoftUnknown_3JT',				0xE5B,	'A2CU9ZQDNZFID4'),	# 3JT?
 	('KindleColorSoftUnknown_3J6',				0xE46,	'A2CU9ZQDNZFID4'),	# 3J6?
 	('KindleColorSoftUnknown_456',				0x10A6,	'A2CU9ZQDNZFID4'),	# 456?
+	('KindleColorSoftUnknown_455',				0x10A5,	'A2CU9ZQDNZFID4'),	# 455?
+	('KindleColorSoftUnknown_4EP',				0x11D7,	'A2CU9ZQDNZFID4'),	# 4EP?
 	('KindleUnknown', 0x00)
 ]
 
