@@ -9,12 +9,12 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Compile KindleTool
       run: |
           sudo apt-get install -y zlib1g-dev libarchive-dev nettle-dev
           make
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: kindletool
         path: KindleTool/Release/kindletool
