@@ -393,6 +393,20 @@ typedef enum
 	KindleColorSoftUnknown_456        = 0x10A6,    // 456?
 	KindleColorSoftUnknown_455        = 0x10A5,    // 455?
 	KindleColorSoftUnknown_4EP        = 0x11D7,    // 4EP?
+	// Kindle Scribe 3, released December 2025 on FW 5.19.x
+	KindleScribe3Unknown_4PG          = 0x12F0,    // 4PG?
+	KindleScribe3Unknown_4PE          = 0x12EE,    // 4PE?
+	KindleScribe3Unknown_4PL          = 0x12F4,    // 4PL?
+	KindleScribe3Unknown_4F8          = 0x11E8,    // 4F8?
+	KindleScribe3Unknown_4FA          = 0x11EA,    // 4FA
+	KindleScribe3Unknown_454          = 0x10A4,    // 454?
+	// Kindle Scribe ColorSoft, released December 2025 on FW 5.19.x
+	KindleScribeColorSoftUnknown_4VX  = 0x13BF,    // 4VX?
+	KindleScribeColorSoftUnknown_4PF  = 0x12EF,    // 4PF?
+	KindleScribeColorSoftUnknown_4PH  = 0x12F1,    // 4PH
+	KindleScribeColorSoftUnknown_4F9  = 0x11E9,    // 4F9?
+	KindleScribeColorSoftUnknown_4FB  = 0x11EB,    // 4FB?
+	KindleScribeColorSoftUnknown_46P  = 0x10D7,    // 46P?
 	KindleUnknown                     = 0x00
 } Device;
 
@@ -413,6 +427,8 @@ typedef enum
 	Bellatrix        = 0x0C,    // Kindle PW5 (11th gen), Basic 4
 	Bellatrix3       = 0x0D,    // Kindle Scribe
 	Bellatrix4       = 0x0E,    // Kindle PW6 (12th gen), ColorSoft
+	Platpa6          = 0x0F,    // Kindle Scribe 3
+	Platcs8          = 0x10,    // Kindle Scribe ColorSoft
 } Platform;
 
 typedef enum
@@ -440,7 +456,10 @@ typedef enum
 	Barolo            = 0xFF     // Kindle Scribe
 	Rossini           = 0xFF     // Kindle Basic 5
 	Sangria           = 0xFF     // Kindle PW6
+	Pisco             = 0xFF     // Kindle Scribe 2
 	SeaBreeze         = 0xFF     // Kindle ColorSoft
+	Paloma            = 0xFF     // Kindle Scribe 3
+	Calvados          = 0xFF     // Kindle Scribe ColorSoft
 				     */
 } Board;
 
@@ -480,7 +499,10 @@ typedef enum
 // Barolo                     // Kindle Scribe (First Bellatrix3 board) - Kindle Scribe
 // Rossini                    // Kindle Basic 5 (KT6) [Kindle 11th gen - 2024] - Kindle (11th Generation) - 2024 Release
 // Sangria                    // Kindle PW6 (First Bellatrix4 board w/ the CS) - Kindle Paperwhite (12th Generation) - 2024 Release
+// Pisco                      // Kindle KS2 - Kindle Scribe - 2024 Release
 // SeaBreeze                  // Kindle CS - Kindle ColorSoft
+// Paloma                     // Kindle KS3 - (First Platpa6 board) - Kindle Scribe (3rd Generation)
+// Calvados                   // Kindle KSC - (First Platcs8 board) - Kindle Scribe Colorsoft (1st Generation)
 
 typedef struct
 {
