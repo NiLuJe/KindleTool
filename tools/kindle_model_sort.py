@@ -224,6 +224,8 @@ model_tuples = [
 	('KindleColorSoftUnknown_456',				0x10A6,	'A2CU9ZQDNZFID4'),	# 456?
 	('KindleColorSoftUnknown_455',				0x10A5,	'A2CU9ZQDNZFID4'),	# 455?
 	('KindleColorSoftUnknown_4EP',				0x11D7,	'A2CU9ZQDNZFID4'),	# 4EP?
+	('ValidKindleUnknown_53C',					0x1463,	'A1956ZWD74DEPW'),	# 53C?
+	('ValidKindleUnknown_KVR',					0x4FB9,	'A2C8F0TJH71TA1'),	# KVR?
 	('KindleScribe3Unknown_4PG',				0x12F0,	'A2PZKJK345L1G8'),	# 4PG?
 	('KindleScribe3Unknown_4PE',				0x12EE,	'A2PZKJK345L1G8'),	# 4PE?
 	('KindleScribe3Unknown_4PL',				0x12F4,	'AC66OWFZXI53A'),	# 4PL?

@@ -393,6 +393,9 @@ typedef enum
 	KindleColorSoftUnknown_456        = 0x10A6,    // 456?
 	KindleColorSoftUnknown_455        = 0x10A5,    // 455?
 	KindleColorSoftUnknown_4EP        = 0x11D7,    // 4EP?
+	// Mystery Kindles from 5.19.1's deviceTypes.conf
+	ValidKindleUnknown_53C            = 0x146C,    // 53C?
+	ValidKindleUnknown_KVR            = 0x4FB9,    // KVR?
 	// Kindle Scribe 3, released December 2025 on FW 5.19.x
 	KindleScribe3Unknown_4PG          = 0x12F0,    // 4PG?
 	KindleScribe3Unknown_4PE          = 0x12EE,    // 4PE?

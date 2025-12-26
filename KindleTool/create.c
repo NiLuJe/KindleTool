@@ -2016,6 +2016,8 @@ int
 					info.devices[info.num_devices++]       = ValidKindleUnknown_0x0C;
 					info.devices[info.num_devices++]       = ValidKindleUnknown_0x0D;
 					info.devices[info.num_devices++]       = ValidKindleUnknown_0x99;
+					info.devices[info.num_devices++]       = ValidKindleUnknown_53C;
+					info.devices[info.num_devices++]       = ValidKindleUnknown_KVR;
 				} else if (strcasecmp(optarg, "kindle2") == 0) {
 					memcpy(info.magic_number, "FD04", MAGIC_NUMBER_LENGTH);
 					const unsigned int num_aliased_devices = 2;
