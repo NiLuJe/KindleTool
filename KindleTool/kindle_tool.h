@@ -145,7 +145,7 @@ FILE* kt_win_tmpfile(void);
 
 // Version tag fallback
 #ifndef KT_VERSION
-#	define KT_VERSION "v1.6.5-GIT"
+#	define KT_VERSION "v1.6.6-GIT"
 #endif
 
 // user@host tag fallback
