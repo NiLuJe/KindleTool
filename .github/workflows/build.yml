@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     tags:
-      - "build-*"
+      - "v*"
 
 permissions:
   contents: write
