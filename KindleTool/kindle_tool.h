@@ -399,7 +399,7 @@ typedef enum
 	// Kindle Scribe 3, released December 2025 on FW 5.19.x
 	KindleScribe3Unknown_4PG          = 0x12F0,    // 4PG?
 	KindleScribe3Unknown_4PE          = 0x12EE,    // 4PE?
-	KindleScribe3Unknown_4PL          = 0x12F4,    // 4PL?
+	KindleScribe3NoFrontLight_4PL          = 0x12F4,    // 4PL?
 	KindleScribe3Unknown_4F8          = 0x11E8,    // 4F8?
 	KindleScribe3Unknown_4FA          = 0x11EA,    // 4FA
 	KindleScribe3Unknown_454          = 0x10A4,    // 454?

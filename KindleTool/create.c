@@ -1727,7 +1727,7 @@ int
 					if (kt_with_unknown_devcodes) {
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4PG;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4PE;
-						info.devices[info.num_devices++] = KindleScribe3Unknown_4PL;
+						info.devices[info.num_devices++] = KindleScribe3NoFrontLight_4PL;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4F8;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4FA;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_454;
@@ -1989,7 +1989,7 @@ int
 					if (kt_with_unknown_devcodes) {
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4PG;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4PE;
-						info.devices[info.num_devices++] = KindleScribe3Unknown_4PL;
+						info.devices[info.num_devices++] = KindleScribe3NoFrontLight_4PL;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4F8;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_4FA;
 						info.devices[info.num_devices++] = KindleScribe3Unknown_454;

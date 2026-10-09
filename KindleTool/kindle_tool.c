@@ -564,7 +564,7 @@ const char*
 			return "Kindle Scribe 3 (2025) (Unknown Variant 4PG)";
 		case KindleScribe3Unknown_4PE:
 			return "Kindle Scribe 3 (2025) (Unknown Variant 4PE)";
-		case KindleScribe3Unknown_4PL:
+		case KindleScribe3NoFrontLight_4PL:
 			return "Kindle Scribe 3 (2025) (Unknown Variant 4PL)";
 		case KindleScribe3Unknown_4F8:
 			return "Kindle Scribe 3 (2025) (Unknown Variant 4F8)";
