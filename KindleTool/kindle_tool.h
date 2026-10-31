@@ -421,6 +421,16 @@ typedef enum
 	KindleBasic6AluminumUnknown_56S   = 0x14DA,    // 56S?
 	KindleBasic6Unknown_56U           = 0x14DC,    // 56U
 	KindleBasic6Unknown_56V           = 0x14DD,    // 56V?
+	// Kindle Paperwhite 7, release October 2026 on FW 5.20.0
+	KindlePaperWhite7Unknown_5R1	  = 0x1721,	   // 5R1?
+	KindlePaperWhite7Unknown_5R2	  = 0x1722,	   // 5R2?
+	KindlePaperWhite7Unknown_5R0	  = 0x1720,	   // 5R0?
+	KindlePaperWhite7Unknown_5R5	  = 0x1725,	   // 5R5?
+	KindlePaperWhite7Unknown_5R4	  = 0x1724,	   // 5R4?
+	KindlePaperWhite7Unknown_5R3	  = 0x1723,	   // 5R3?
+	KindlePaperWhite7Unknown_65N	  = 0x18B6,	   // 65N?
+	KindlePaperWhite7Unknown_65P	  = 0x18B8,	   // 65P?
+	KindlePaperWhite7Unknown_65Q	  = 0x18B8,	   // 65Q?
 	KindleUnknown                     = 0x00
 } Device;
 
@@ -476,6 +486,7 @@ typedef enum
 	Paloma            = 0xFF     // Kindle Scribe 3
 	Calvados          = 0xFF     // Kindle Scribe ColorSoft
 	Prosecco          = 0xFF     // Kindle Basic 6
+	Amaro             = 0xFF     // Kindle PW7
 				     */
 } Board;
 
@@ -520,6 +531,7 @@ typedef enum
 // Paloma                     // Kindle KS3 - (First Platpa6 board) - Kindle Scribe (3rd Generation)
 // Calvados                   // Kindle KSC - (First Platcs8 board) - Kindle Scribe Colorsoft (1st Generation)
 // Prosecco                   // Kindle Basic 6 (KT7) (First Platpo8 board) - Kindle (2026 Release)
+// Amaro                      // Kindle PW7 (First Amaro5 board) - Kindle Paperwhite (13th Generation)
 
 typedef struct
 {
