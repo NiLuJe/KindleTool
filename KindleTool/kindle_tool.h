@@ -410,6 +410,27 @@ typedef enum
 	KindleScribeColorSoftUnknown_4F9  = 0x11E9,    // 4F9?
 	KindleScribeColorSoftUnknown_4FB  = 0x11EB,    // 4FB?
 	KindleScribeColorSoftUnknown_46P  = 0x10D7,    // 46P?
+	// Kindle Basic 6, released October 2026 on FW 5.20.0
+	KindleBasic6AluminumUnknown_6HQ   = 0x1A38,    // 6HQ?
+	KindleBasic6AluminumUnknown_6HR   = 0x1A39,    // 6HR?
+	KindleBasic6Unknown_6HN           = 0x1A36,    // 6HN?
+	KindleBasic6Unknown_6HP           = 0x1A37,    // 6HP?
+	KindleBasic6AluminumUnknown_5W6   = 0x17C6,    // 5W6?
+	KindleBasic6AluminumUnknown_5W5   = 0x17C5,    // 5W5?
+	KindleBasic6AluminumUnknown_56T   = 0x14DB,    // 56T
+	KindleBasic6AluminumUnknown_56S   = 0x14DA,    // 56S?
+	KindleBasic6Unknown_56U           = 0x14DC,    // 56U
+	KindleBasic6Unknown_56V           = 0x14DD,    // 56V?
+	// Kindle Paperwhite 7, release October 2026 on FW 5.20.0
+	KindlePaperWhite7Unknown_5R1	  = 0x1721,	   // 5R1?
+	KindlePaperWhite7Unknown_5R2	  = 0x1722,	   // 5R2?
+	KindlePaperWhite7Unknown_5R0	  = 0x1720,	   // 5R0?
+	KindlePaperWhite7Unknown_5R5	  = 0x1725,	   // 5R5?
+	KindlePaperWhite7Unknown_5R4	  = 0x1724,	   // 5R4?
+	KindlePaperWhite7Unknown_5R3	  = 0x1723,	   // 5R3?
+	KindlePaperWhite7Unknown_65N	  = 0x18B6,	   // 65N?
+	KindlePaperWhite7Unknown_65P	  = 0x18B8,	   // 65P?
+	KindlePaperWhite7Unknown_65Q	  = 0x18B8,	   // 65Q?
 	KindleUnknown                     = 0x00
 } Device;
 
@@ -432,6 +453,8 @@ typedef enum
 	Bellatrix4       = 0x0E,    // Kindle PW6 (12th gen), ColorSoft
 	Platpa6          = 0x0F,    // Kindle Scribe 3
 	Platcs8          = 0x10,    // Kindle Scribe ColorSoft
+	Platpo8          = 0x11,    // Kindle Basic 6
+	Amaro5           = 0x12,    // Kindle PW7
 } Platform;
 
 typedef enum
@@ -463,6 +486,8 @@ typedef enum
 	SeaBreeze         = 0xFF     // Kindle ColorSoft
 	Paloma            = 0xFF     // Kindle Scribe 3
 	Calvados          = 0xFF     // Kindle Scribe ColorSoft
+	Prosecco          = 0xFF     // Kindle Basic 6
+	Amaro             = 0xFF     // Kindle PW7
 				     */
 } Board;
 
@@ -506,6 +531,8 @@ typedef enum
 // SeaBreeze                  // Kindle CS - Kindle ColorSoft
 // Paloma                     // Kindle KS3 - (First Platpa6 board) - Kindle Scribe (3rd Generation)
 // Calvados                   // Kindle KSC - (First Platcs8 board) - Kindle Scribe Colorsoft (1st Generation)
+// Prosecco                   // Kindle Basic 6 (KT7) (First Platpo8 board) - Kindle (2026 Release)
+// Amaro                      // Kindle PW7 (First Amaro5 board) - Kindle Paperwhite (13th Generation)
 
 typedef struct
 {
