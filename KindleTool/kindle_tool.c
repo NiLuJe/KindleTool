@@ -650,6 +650,8 @@ const char*
 			return "Platcs8";
 		case Platpo8:
 			return "Platpo8";
+		case Amaro5:
+			return "Amaro5";
 		default:
 			return "Unknown";
 	}
@@ -864,6 +866,7 @@ static int
 	    "      -p, --platform platpa6        Platpa6 (Scribe 3 platform).\n"
 	    "      -p, --platform platcs8        Platcs8 (Scribe ColorSoft platform).\n"
 	    "      -p, --platform platpo8        Platpo8 (Basic 6 platform).\n"
+	    "      -p, --platform amaro5         Amaro5 (PaperWhite 7 platform).\n"
 	    "      \n"
 	    "    Boards:\n"
 	    "      Recovery V2 & Recovery FB02 with header rev 2 updates only. Use a single board per package.\n"

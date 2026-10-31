@@ -21,6 +21,7 @@
 */
 
 #include "create.h"
+#include "kindle_tool.h"
 
 static const char*
     convert_bundle_version(BundleVersion bundlev)
@@ -2323,6 +2324,8 @@ int
 					info.platform = Platcs8;
 				} else if (strcasecmp(optarg, "platpo8") == 0) {
 					info.platform = Platpo8;
+				} else if (strcasecmp(optarg, "amaro5") == 0) {
+					info.platform = Amaro5;
 				} else {
 					fprintf(stderr, "Unknown platform %s.\n", optarg);
 					goto do_error;

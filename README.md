@@ -116,6 +116,7 @@
 		-p, --platform platpa6        Platpa6 (Scribe 3 platform).
 		-p, --platform platcs8        Platcs8 (Scribe ColorSoft platform).
 		-p, --platform platpo8        Platpo8 (Basic 6 platform).
+		-p, --platform amaro5         Amaro5 (PaperWhite 7 platform).
 	Boards:
 		Recovery V2 & Recovery FB02 with header rev 2 updates only. Use a single board per package.
 

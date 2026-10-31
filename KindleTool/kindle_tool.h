@@ -454,6 +454,7 @@ typedef enum
 	Platpa6          = 0x0F,    // Kindle Scribe 3
 	Platcs8          = 0x10,    // Kindle Scribe ColorSoft
 	Platpo8          = 0x11,    // Kindle Basic 6
+	Amaro5           = 0x12,    // Kindle PW7
 } Platform;
 
 typedef enum
