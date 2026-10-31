@@ -21,7 +21,6 @@
 */
 
 #include "create.h"
-#include "kindle_tool.h"
 
 static const char*
     convert_bundle_version(BundleVersion bundlev)
